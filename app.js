@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.uri);
+mongoose.connect(process.env.URI);
 
 const itemsSchema = new mongoose.Schema({
   name:String
