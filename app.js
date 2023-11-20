@@ -45,13 +45,16 @@ const listSchema = new mongoose.Schema({
 const List = new mongoose.model("List",listSchema);
 
 app.get("/", function(req, res) {
-
+  try{
   async function result(){
     const dbitems = await item.find({});
     console.log(dbitems);
     res.render("list", {listTitle: "Today", newListItems: dbitems});
   }
   result();
+}catch(err){
+  console.log(err);
+}
 
 });
 
